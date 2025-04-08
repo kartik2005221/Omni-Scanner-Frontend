@@ -26,7 +26,7 @@ def level_1():
             if validate_ip_range(ip_addr):
                 if input2 == '2':
                     run_command(["nmap", "-sn", "-T5", "--min-parallelism", "100", "--host-timeout", "2000ms",
-                                    ip_addr])
+                                 ip_addr])
 
                 elif input2 == '3':
                     # try:
@@ -207,5 +207,6 @@ def menu_linux():
                 print("Already running with sudo")
         else:
             print("Unsupported Option selected, Please Try again")
+
 
 print("Wrong file selected for running\nPlease run 'main.py' file by using 'python3 main.py' command")
