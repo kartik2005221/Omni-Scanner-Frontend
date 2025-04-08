@@ -15,6 +15,11 @@ def about():
     """About page route"""
     return render_template('about.html')
 
+@app.route('/history')
+def history():
+    """History page route"""
+    return render_template('history.html')
+
 
 @app.errorhandler(404)
 def page_not_found(e):
