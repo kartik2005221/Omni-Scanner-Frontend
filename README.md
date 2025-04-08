@@ -1,5 +1,5 @@
 # Omni-Scanner
-![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue) ![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-brightgreen) [![Platform](https://img.shields.io/badge/Platform-Linux%20|%20Windows-informational)](#)
+[![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/downloads/) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-brightgreen)](./LICENSE) [![Platform](https://img.shields.io/badge/Platform-Linux%20|%20Windows-informational)](./PLATFORM)
 
 **Discover. Analyze. Secure.**
 
@@ -30,7 +30,7 @@ Omni Scanner is a powerful, versatile, and open-source network scanning suite bu
 ### Prerequisites
 - **Python 3.8+**
 - **Nmap:** [Download here](https://nmap.org/download.html)
-- **Linux/macOS:** `arp-scan` (install via your package manager)
+- **Linux:** `arp-scan` (install via your package manager)
 - **Windows:** **Npcap** for raw packet support
 
 ### Clone the Repository
@@ -100,15 +100,16 @@ We welcome contributions to improve Omni-Scanner!
 ---
 
 ## 📜 License
-This project is distributed under the **GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007**. See the [LICENSE](https://chatgpt.com/c/LICENSE) file for details.
+This project is distributed under the **GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007**. See the [LICENSE](./LICENSE) file for details.
 
 ---
 
 ## 📬 Contact
-- **Email:** [kartik2005221@proton.me](mailto:kartik2005221@proton.me)
-- **GitHub:** [@kartik2005221](https://github.com/kartik2005221)
-- **Twitter:** [@kartik2005221](https://twitter.com/kartik2005221)
-- **LinkedIn:** [in/kartik2005221](https://linkedin.com/in/kartik2005221)
+### Myself - Maintainer, Backend Developer
+[![Email](https://img.shields.io/badge/proton%20mail-6D4AFF?style=for-the-badge&logo=protonmail&logoColor=white)](mailto:kartik2005221@proton.me) [![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kartik2005221) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kartik2005221/) [![Signal](https://img.shields.io/badge/Signal-3A76F0?style=for-the-badge&logo=signal&logoColor=white)](https://signal.me/#eu/NKRjNORoYBKevqLxymZOoG7HZv5v_YBZ3hSgA8r5FsJ-0I-yzu9OGYJQS8jiXVgZ)
+
+### Himanshu – Frontend Developer
+[![Email](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:himanshu20050118@gmail.com) [![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Himanshu20050118) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/himanshu20050118/)
 
 ---
 
