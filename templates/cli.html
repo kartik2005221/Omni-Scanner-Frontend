@@ -16,7 +16,7 @@
             </p>
 
             <section class="mb-8">
-                <h2 class="text-2xl text-yellow-300 font-semibold mb-2">Step 1: Clone the Repository</h2>
+                <h2 class="text-2xl text-blue-300 font-semibold mb-2">Step 1: Clone the Repository</h2>
                 <p class="mb-2">First, clone the project to your system:</p>
                 {# <pre class="bg-gray-800 p-3 rounded text-green-300 overflow-x-auto">git clone https://github.com/kartik2005221/Omni-Scanner.git</pre>#}
                 {# <pre class="bg-gray-800 p-3 rounded text-green-300 overflow-x-auto">cd Omni-Scanner</pre>#}
@@ -61,7 +61,7 @@
             </section>
 
             <section class="mb-8">
-                <h2 class="text-2xl text-yellow-300 font-semibold mb-2">Step 2: Install Python Requirements</h2>
+                <h2 class="text-2xl text-blue-300 font-semibold mb-2">Step 2: Install Python Requirements</h2>
                 <p class="mb-2">Install all necessary dependencies from <code>requirements.txt</code>:</p>
                 {#                <pre class="bg-gray-800 p-3 rounded text-green-300 overflow-x-auto">pip install -r requirements.txt</pre>#}
                 <aside class="bg-gray-950 text-white p-6 rounded-lg w-full font-mono">
@@ -76,15 +76,24 @@
             </section>
 
             <section class="mb-8">
-                <h2 class="text-2xl text-yellow-300 font-semibold mb-2">Step 3: Run the Scanner</h2>
+                <h2 class="text-2xl text-blue-300 font-semibold mb-2">Step 3: Run the Scanner</h2>
                 <p class="mb-2">To start the CLI interface:</p>
-                <pre class="bg-gray-800 p-3 rounded text-green-300 overflow-x-auto">python main.py</pre>
+{#                <pre class="bg-gray-800 p-3 rounded text-green-300 overflow-x-auto">python main.py</pre>#}
+                <aside class="bg-gray-950 text-white p-6 rounded-lg w-full font-mono">
+                    <div class="flex items-center">
+                        <p class="text-green-400">$&nbsp</p>
+                        <p class="text-green-400">python main.py</p>
+                        <button class="ml-auto text-sm px-4 py-2 border text-white rounded-xl cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-500 hover:shadow-lg hover:scale-105 active:scale-95">
+                            Copy
+                        </button>
+                    </div>
+                </aside>
                 <p class="text-sm text-gray-400 mt-1">For Linux users, you might need to use <code>sudo</code> for full
                     network access.</p>
             </section>
 
             <section class="mb-8">
-                <h2 class="text-2xl text-yellow-300 font-semibold mb-2">Common Tips & Tricks</h2>
+                <h2 class="text-2xl text-blue-300 font-semibold mb-2">Common Tips & Tricks</h2>
                 <ul class="list-disc ml-6 space-y-2">
                     <li><span class="text-green-300">Ctrl + C</span> to gracefully exit the tool anytime.</li>
                     <li>Make sure Nmap is installed and added to your PATH (especially on Windows).</li>
@@ -95,7 +104,7 @@
             </section>
 
             <section class="mb-10">
-                <h2 class="text-2xl text-yellow-300 font-semibold mb-2">Trouble? Try These</h2>
+                <h2 class="text-2xl text-blue-300 font-semibold mb-2">Trouble? Try These</h2>
                 <ul class="list-disc ml-6 space-y-2 text-red-400">
                     <li>If <code>ModuleNotFoundError</code>, check Python version and virtual environment.</li>
                     <li>If <code>PermissionError</code>, re-run with <code>sudo</code> or admin mode.</li>
@@ -107,7 +116,7 @@
             </section>
 
             <div class="mt-12 flex justify-between items-center">
-                <a href="/" class="text-green-400 hover:underline text-lg">&larr; Back to Home</a>
+                <a href="{{ url_for('about') }}" class="text-green-400 hover:underline text-lg">&larr; Back</a>
                 <span class="text-sm text-gray-500">Made with ❤️ and terminal mastery</span>
             </div>
         </div>

@@ -8,24 +8,23 @@ oper_system = Oper_system.lower()
 
 def splash_screen():
     """To print the splash screen"""
-    print(r'''
-kkkkkkkk                                                          tttt            iiii  kkkkkkkk
-k::::::k                                                       ttt:::t           i::::i k::::::k
-k::::::k                                                       t:::::t            iiii  k::::::k
-k::::::k                                                       t:::::t                  k::::::k
- k:::::k    kkkkkkk  aaaaaaaaaaaaa   rrrrr   rrrrrrrrr   ttttttt:::::ttttttt    iiiiiii  k:::::k    kkkkkkk
- k:::::k   k:::::k   a::::::::::::a  r::::rrr:::::::::r  t:::::::::::::::::t    i:::::i  k:::::k   k:::::k
- k:::::k  k:::::k    aaaaaaaaa:::::a r:::::::::::::::::r t:::::::::::::::::t     i::::i  k:::::k  k:::::k
- k:::::k k:::::k              a::::a rr::::::rrrrr::::::rtttttt:::::::tttttt     i::::i  k:::::k k:::::k
- k::::::k:::::k        aaaaaaa:::::a  r:::::r     r:::::r      t:::::t           i::::i  k::::::k:::::k
- k:::::::::::k       aa::::::::::::a  r:::::r     rrrrrrr      t:::::t           i::::i  k:::::::::::k
- k:::::::::::k      a::::aaaa::::::a  r:::::r                  t:::::t           i::::i  k:::::::::::k
- k::::::k:::::k    a::::a    a:::::a  r:::::r                  t:::::t    tttttt i::::i  k::::::k:::::k
-k::::::k k:::::k   a::::a    a:::::a  r:::::r                  t::::::tttt:::::ti::::::ik::::::k k:::::k
-k::::::k  k:::::k  a:::::aaaa::::::a  r:::::r                  tt::::::::::::::ti::::::ik::::::k  k:::::k
-k::::::k   k:::::k  a::::::::::aa:::a r:::::r                    tt:::::::::::tti::::::ik::::::k   k:::::k
-kkkkkkkk    kkkkkkk  aaaaaaaaaa  aaaa rrrrrrr                      ttttttttttt  iiiiiiiikkkkkkkk    kkkkkkk
-
+    print(r'''                                  
+               AAA                 iiii  RRRRRRRRRRRRRRRRR   
+              A:::A               i::::i R::::::::::::::::R  
+             A:::::A               iiii  R::::::RRRRRR:::::R 
+            A:::::::A                    RR:::::R     R:::::R
+           A:::::::::A           iiiiiii   R::::R     R:::::R
+          A:::::A:::::A          i:::::i   R::::R     R:::::R
+         A:::::A A:::::A          i::::i   R::::RRRRRR:::::R 
+        A:::::A   A:::::A         i::::i   R:::::::::::::RR  
+       A:::::A     A:::::A        i::::i   R::::RRRRRR:::::R 
+      A:::::AAAAAAAAA:::::A       i::::i   R::::R     R:::::R
+     A:::::::::::::::::::::A      i::::i   R::::R     R:::::R
+    A:::::AAAAAAAAAAAAA:::::A     i::::i   R::::R     R:::::R
+   A:::::A             A:::::A   i::::::iRR:::::R     R:::::R
+  A:::::A               A:::::A  i::::::iR::::::R     R:::::R
+ A:::::A                 A:::::A i::::::iR::::::R     R:::::R
+AAAAAAA                   AAAAAAAiiiiiiiiRRRRRRRR     RRRRRRR
 
                   ***********************************************************************
                   ***********************************************************************
