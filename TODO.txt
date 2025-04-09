@@ -1,6 +1,9 @@
 frontend tasks
-- use devolympus scheme in header
+- put image in about.html
 
+
+
+- backend tasks
 TODO-6: Sanitize input before using in subprocess.run
     Potential Security Risk with subprocess.run:
     Using subprocess.run with user inputs directly can be a security risk (command injection). It is better to sanitize
@@ -24,10 +27,7 @@ Extra functionalities:
 - add a section in readme for preparing user's os to run this script**
 - update documentation**
 after doing **, pull to the main branch
-- incorrect file run, run 'python main.py'
 - Note: Host seems down. If it is really up, but blocking our ping probes, try -Pn, give an option to the user.
 
 --disable-arp-ping, -Pn, (-a) not with the script
 -o-all, -oX, -oG
-
-testing it rugged on both platforms

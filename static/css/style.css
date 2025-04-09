@@ -6,3 +6,10 @@ body {
     background-position: center; /* Centers the image */
     color: white; /* Ensures text is visible */
 }
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures it stays above other elements */
+    background: linear-gradient(to right, #0f5ff3, #f20367); /* Retains the gradient background */
+}

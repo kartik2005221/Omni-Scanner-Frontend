@@ -20,6 +20,10 @@ def history():
     """History page route"""
     return render_template('history.html')
 
+@app.route('/cli')
+def cli():
+    """CLI page route"""
+    return render_template('cli.html')
 
 @app.errorhandler(404)
 def page_not_found(e):

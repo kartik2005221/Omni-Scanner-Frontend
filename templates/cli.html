@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    OmniScanner CLI
+{% endblock %}
+
+
+{% block body %}
+    <div class="text-gray-200 font-sans px-6 py-10 min-h-screen">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl font-bold text-green-400 mb-6">How to Use Omni-Scanner in CLI Mode</h1>
+
+            <p class="text-lg mb-6 text-gray-300">
+                Prefer terminal-based scanning? Omni-Scanner's CLI mode offers powerful, fast, and customizable control
+                right from your console.
+            </p>
+
+            <section class="mb-8">
+                <h2 class="text-2xl text-yellow-300 font-semibold mb-2">Step 1: Clone the Repository</h2>
+                <p class="mb-2">First, clone the project to your system:</p>
+                {# <pre class="bg-gray-800 p-3 rounded text-green-300 overflow-x-auto">git clone https://github.com/kartik2005221/Omni-Scanner.git</pre>#}
+                {# <pre class="bg-gray-800 p-3 rounded text-green-300 overflow-x-auto">cd Omni-Scanner</pre>#}
+{#                <aside class="bg-black text-white p-6 rounded-lg w-full font-mono">#}
+{#                    <div class="flex justify-between items-center">#}
+{#                        <div class="flex space-x-2 text-red-500">#}
+{#                            <div class="w-3 h-3 rounded-full bg-red-500"></div>#}
+{#                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>#}
+{#                            <div class="w-3 h-3 rounded-full bg-green-500"></div>#}
+{#                        </div>#}
+                        {#                        <p class="text-sm">bash</p>#}
+{#                        <button class="text-sm px-4 py-2 border text-white rounded-xl cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-500 hover:shadow-lg hover:scale-105 active:scale-95">#}
+{#                            Copy#}
+{#                        </button>#}
+{##}
+{#                    </div>#}
+{#                    <div class="mt-4">#}
+{#                        <p class="text-green-400">$ git clone https://github.com/kartik2005221/Omni-Scanner.git</p>#}
+                        {#                        <p class="text-white">+ next@10.2.3</p>#}
+                        {#                        <p class="text-white">added 1 package, and audited 2 packages in 3s</p>#}
+{#                        <p class="text-green-400">$ cd Omni-Scanner</p>#}
+{#                    </div>#}
+{#                </aside>#}
+
+                <aside class="bg-gray-950 text-white p-6 rounded-lg w-full font-mono">
+                    <div class="flex items-center">
+                        <p class="text-green-400">$ git clone https://github.com/kartik2005221/Omni-Scanner.git</p>
+                        <button class="ml-auto text-sm px-4 py-2 border text-white rounded-xl cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-500 hover:shadow-lg hover:scale-105 active:scale-95">
+                            Copy
+                        </button>
+                    </div>
+                    <div class="flex items-center mt-4">
+                        <p class="text-green-400">$ cd Omni-Scanner</p>
+                        <button class="ml-auto text-sm px-4 py-2 border text-white rounded-xl cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-500 hover:shadow-lg hover:scale-105 active:scale-95">
+                            Copy
+                        </button>
+                    </div>
+                </aside>
+                <div class="card"></div>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl text-yellow-300 font-semibold mb-2">Step 2: Install Python Requirements</h2>
+                <p class="mb-2">Install all necessary dependencies from <code>requirements.txt</code>:</p>
+                {#                <pre class="bg-gray-800 p-3 rounded text-green-300 overflow-x-auto">pip install -r requirements.txt</pre>#}
+                <aside class="bg-gray-950 text-white p-6 rounded-lg w-full font-mono">
+                    <div class="flex items-center">
+                        <p class="text-green-400">$ pip install -r requirements.txt</p>
+                        <button class="ml-auto text-sm px-4 py-2 border text-white rounded-xl cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-500 hover:shadow-lg hover:scale-105 active:scale-95">
+                            Copy
+                        </button>
+                    </div>
+                </aside>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl text-yellow-300 font-semibold mb-2">Step 3: Run the Scanner</h2>
+                <p class="mb-2">To start the CLI interface:</p>
+                <pre class="bg-gray-800 p-3 rounded text-green-300 overflow-x-auto">python main.py</pre>
+                <p class="text-sm text-gray-400 mt-1">For Linux users, you might need to use <code>sudo</code> for full
+                    network access.</p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl text-yellow-300 font-semibold mb-2">Common Tips & Tricks</h2>
+                <ul class="list-disc ml-6 space-y-2">
+                    <li><span class="text-green-300">Ctrl + C</span> to gracefully exit the tool anytime.</li>
+                    <li>Make sure Nmap is installed and added to your PATH (especially on Windows).</li>
+                    <li>If using on Linux, install <code>arp-scan</code> via package manager for local device discovery.
+                    </li>
+                    <li>Admin access is recommended for advanced scans like ARP, traceroute, and OS detection.</li>
+                </ul>
+            </section>
+
+            <section class="mb-10">
+                <h2 class="text-2xl text-yellow-300 font-semibold mb-2">Trouble? Try These</h2>
+                <ul class="list-disc ml-6 space-y-2 text-red-400">
+                    <li>If <code>ModuleNotFoundError</code>, check Python version and virtual environment.</li>
+                    <li>If <code>PermissionError</code>, re-run with <code>sudo</code> or admin mode.</li>
+                    <li>If <code>command not found</code>, verify dependencies like <code>nmap</code> or
+                        <code>arp-scan</code> are installed.
+                    </li>
+                    <li>Windows users: Make sure <strong>Npcap</strong> is installed and service is running.</li>
+                </ul>
+            </section>
+
+            <div class="mt-12 flex justify-between items-center">
+                <a href="/" class="text-green-400 hover:underline text-lg">&larr; Back to Home</a>
+                <span class="text-sm text-gray-500">Made with ❤️ and terminal mastery</span>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
