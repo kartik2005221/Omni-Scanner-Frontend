@@ -27,6 +27,10 @@ def switch_sudo():
         sudo_status = None
     return render_template('switch_sudo.html', sudo_status=sudo_status)
 
+@app.route('/result')
+def result():
+    """Result page route"""
+    return render_template('result.html')
 
 @app.route('/scan')
 def scan():

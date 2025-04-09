@@ -1,8 +1,3 @@
-frontend tasks
-- put image in about.html
-
-
-
 - backend tasks
 TODO-6: Sanitize input before using in subprocess.run
     Potential Security Risk with subprocess.run:
