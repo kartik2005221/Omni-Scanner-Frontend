@@ -2,341 +2,373 @@
 
 {% block title %}About{% endblock %}
 
+
 {% block body %}
-    <section class="text-gray-400 body-font">
-        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-            <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">Project Overview
-                </h1>
-                <p class="mb-8 leading-relaxed">OmniScanner is a powerful, Python-based network scanning suite crafted
-                    for ethical hackers, sysadmins, and cybersecurity learners. It combines both CLI and Web interfaces
-                    for seamless scanning, analysis, and reporting of networks.
-                    <br class="hidden lg:inline-block">
-                    With features like ARP scans, ping sweeps, traceroutes, and advanced Nmap integrations — OmniScanner
-                    empowers users to discover hidden devices, map routes, identify services, and uncover potential
-                    vulnerabilities with ease.
-                    <br class="hidden lg:inline-block">
-                    Whether you’re securing your home network or exploring enterprise setups, OmniScanner is your
-                    lightweight but mighty companion for ethical network reconnaissance.</p>
-                <div class="flex justify-center">
-                    <a  href="{{ url_for('home') }}" class="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">
-                        Launch Scanner
-                    </a>
-                    <a  href="https://github.com/kartik2005221/Omni-Scanner-Frontend" target="_blank" class="ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg">
-                        View Source Code
-                    </a>
-                </div>
-            </div>
-            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-                <img class="object-cover object-center rounded-[1vw] border" alt="hero" src="{{ url_for('static', filename='screenshot.png') }}">
-            </div>
-        </div>
-    </section>
-
-
-
-
-    <section class="text-gray-400 body-font">
-        <div class="container px-5 py-24 mx-auto flex flex-wrap">
-            <h2 class="sm:text-3xl text-2xl text-white font-medium title-font mb-2 md:w-1/5">Our Vision</h2>
-            <div class="md:w-4/5">
-                <p class="leading-relaxed text-base">OmniScanner’s core objective is to simplify and democratize network
-                    scanning — putting powerful tools in the hands of students, cybersecurity enthusiasts, and
-                    professionals alike. We aim to bridge the gap between raw technical complexity and beginner-friendly
-                    usability, while still maintaining full control and transparency for advanced users.</p>
-                {#                <div class="flex md:mt-4 mt-6">#}
-                {#                    <button class="inline-flex text-white bg-green-500 border-0 py-1 px-4 focus:outline-none hover:bg-green-600 rounded">#}
-                {#                        Button#}
-                {#                    </button>#}
-                {#                    <a class="text-green-400 inline-flex items-center ml-4">Learn More#}
-                {#                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"#}
-                {#                             stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">#}
-                {#                            <path d="M5 12h14M12 5l7 7-7 7"></path>#}
-                {#                        </svg>#}
-                {#                    </a>#}
-                {#                </div>#}
-            </div>
-        </div>
-    </section>
-
-
-
-
-    <section class="text-gray-400 body-font">
-        <div class="container px-5 py-24 mx-auto">
-            <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">Key Features</h1>
-                {#                <p class="lg:w-1/2 w-full leading-relaxed text-opacity-80">Whatever cardigan tote bag tumblr hexagon#}
-                {#                    brooklyn asymmetrical gentrify, subway tile poke farm-to-table.</p>#}
-            </div>
-            <div class="flex flex-wrap -m-4">
-                <div class="xl:w-1/3 md:w-1/2 p-4">
-                    <div class="border border-gray-700 border-opacity-75 p-6 rounded-lg">
-                        <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-gray-800 text-green-400 mb-4">
-                            {#                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"#}
-                            {#                                 stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">#}
-                            {#                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>#}
-                            {#                            </svg>#}
-                            <span class="material-symbols-rounded">
-                                network_check
-                            </span>
-                        </div>
-                        <h2 class="text-lg text-white font-medium title-font mb-2">ARP Scanning</h2>
-                        <p class="leading-relaxed text-base">Quickly detect live devices in your local network using
-                            ARP-based discovery techniques.</p>
-                    </div>
-                </div>
-                <div class="xl:w-1/3 md:w-1/2 p-4">
-                    <div class="border border-gray-700 border-opacity-75 p-6 rounded-lg">
-                        <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-gray-800 text-green-400 mb-4">
-                            <i class="bi bi-globe"></i>
-                        </div>
-                        <h2 class="text-lg text-white font-medium title-font mb-2">Custom Ping Tools</h2>
-                        <p class="leading-relaxed text-base">Supports simple ping, flood ping, and latency-adaptive
-                            checks to verify network health.</p>
-                    </div>
-                </div>
-                <div class="xl:w-1/3 md:w-1/2 p-4">
-                    <div class="border border-gray-700 border-opacity-75 p-6 rounded-lg">
-                        <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-gray-800 text-green-400 mb-4">
-                            <i class="bi bi-hdd-network"></i>
-                        </div>
-                        <h2 class="text-lg text-white font-medium title-font mb-2">Traceroute Mapping</h2>
-                        <p class="leading-relaxed text-base">Visualize the full path from your machine to any IP target
-                            across the globe.</p>
-                    </div>
-                </div>
-                <div class="xl:w-1/3 md:w-1/2 p-4">
-                    <div class="border border-gray-700 border-opacity-75 p-6 rounded-lg">
-                        <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-gray-800 text-green-400 mb-4">
-                            <i class="bi bi-shield-shaded"></i>
-                        </div>
-                        <h2 class="text-lg text-white font-medium title-font mb-2">Nmap Integration</h2>
-                        <p class="leading-relaxed text-base">Perform OS detection, service scans, and stealth probes via
-                            integrated Nmap support.</p>
-                    </div>
-                </div>
-                <div class="xl:w-1/3 md:w-1/2 p-4">
-                    <div class="border border-gray-700 border-opacity-75 p-6 rounded-lg">
-                        <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-gray-800 text-green-400 mb-4">
-                            <i class="bi bi-sd-card"></i>
-                        </div>
-                        <h2 class="text-lg text-white font-medium title-font mb-2">Result Storage</h2>
-                        <p class="leading-relaxed text-base">Scan results can be stored and reviewed later through a
-                            history interface.</p>
-                    </div>
-                </div>
-                <div class="xl:w-1/3 md:w-1/2 p-4">
-                    <div class="border border-gray-700 border-opacity-75 p-6 rounded-lg">
-                        <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-gray-800 text-green-400 mb-4">
-                            <i class="bi bi-code-slash"></i>
-                        </div>
-                        <h2 class="text-lg text-white font-medium title-font mb-2">Dual Interface</h2>
-                        <p class="leading-relaxed text-base">Choose between Command-Line or Web UI for scanning — as per
-                            your comfort.</p>
-                    </div>
-                </div>
-            </div>
-            <a href="{{ url_for('cli') }}" class="flex mx-auto mt-16 text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg w-60 justify-center">
-                Switch to CLI Mode
-            </a>
-        </div>
-    </section>
-
-
-
-
-    <section class="text-gray-400 body-font">
-        <div class="container px-5 py-24 mx-auto">
-            <h1 class="sm:text-3xl text-2xl font-medium title-font text-center text-white mb-20">Raw Denim Heirloom Man
-                Braid
-                <br class="hidden sm:block">Selfies Wayfarers
+<section class="text-gray-400 body-font">
+    <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+        <div
+            class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">Project Overview
             </h1>
-            <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
-                <div class="p-4 md:w-1/3 flex">
-                    <div class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-green-400 mb-4 flex-shrink-0">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                             stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                        </svg>
+            <p class="mb-8 leading-relaxed">OmniScanner is a powerful, Python-based network scanning suite crafted
+                for ethical hackers, sysadmins, and cybersecurity learners. It combines both CLI and Web interfaces
+                for seamless scanning, analysis, and reporting of networks.
+                <br class="hidden lg:inline-block">
+                With features like ARP scans, ping sweeps, traceroutes, and advanced Nmap integrations — OmniScanner
+                empowers users to discover hidden devices, map routes, identify services, and uncover potential
+                vulnerabilities with ease.
+                <br class="hidden lg:inline-block">
+                Whether you’re securing your home network or exploring enterprise setups, OmniScanner is your
+                lightweight but mighty companion for ethical network reconnaissance.
+            </p>
+            <div class="flex justify-center">
+                <a href="{{ url_for('home') }}"
+                    class="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">
+                    Launch Scanner
+                </a>
+                <a href="https://github.com/kartik2005221/Omni-Scanner-Frontend" target="_blank"
+                    class="ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg">
+                    View Source Code
+                </a>
+            </div>
+        </div>
+        <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+            <img class="object-cover object-center rounded-[1vw] border" alt="hero"
+                src="{{ url_for('static', filename='screenshot.png') }}">
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="text-gray-400 body-font">
+    <div class="container px-5 py-24 mx-auto flex flex-wrap">
+        <h2 class="sm:text-3xl text-2xl text-white font-medium title-font mb-2 md:w-1/5">Our Vision</h2>
+        <div class="md:w-4/5">
+            <p class="leading-relaxed text-base">OmniScanner’s core objective is to simplify and democratize network
+                scanning — putting powerful tools in the hands of students, cybersecurity enthusiasts, and
+                professionals alike. We aim to bridge the gap between raw technical complexity and beginner-friendly
+                usability, while still maintaining full control and transparency for advanced users.</p>
+            {# <div class="flex md:mt-4 mt-6">#}
+                {# <button
+                    class="inline-flex text-white bg-green-500 border-0 py-1 px-4 focus:outline-none hover:bg-green-600 rounded">#}
+                    {# Button#}
+                    {# </button>#}
+                {# <a class="text-green-400 inline-flex items-center ml-4">Learn More#}
+                    {# <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" #} {#
+                        stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">#}
+                        {# <path d="M5 12h14M12 5l7 7-7 7"></path>#}
+                        {# </svg>#}
+                    {# </a>#}
+                {# </div>#}
+        </div>
+    </div>
+</section>
+
+
+<section class="text-gray-400 body-font">
+    <div class="container px-5 py-20 mx-auto">
+        <h1 class="sm:text-3xl text-2xl font-medium mb-2 text-white">Key Features</h1>
+        <div class="flex flex-wrap w-full mb-5 flex-col items-center text-center">
+            {# <p class="lg:w-1/2 w-full leading-relaxed text-opacity-80">Whatever cardigan tote bag tumblr hexagon#}
+                {# brooklyn asymmetrical gentrify, subway tile poke farm-to-table.</p>#}
+        </div>
+        <div class="flex flex-wrap -m-4">
+            <div class="xl:w-1/3 md:w-1/2 p-4">
+                <div class="border border-gray-700 border-opacity-75 p-6 rounded-lg">
+                    <div
+                        class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-gray-800 text-green-400 mb-4">
+                        {# <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" #} {#
+                            stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">#}
+                            {# <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>#}
+                            {# </svg>#}
+                        <span class="material-symbols-rounded">
+                            network_check
+                        </span>
                     </div>
-                    <div class="flex-grow pl-6">
-                        <h2 class="text-white text-lg title-font font-medium mb-2">Shooting Stars</h2>
-                        <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast
-                            vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard
-                            ugh iceland kickstarter tumblr live-edge tilde.</p>
-                        <a class="mt-3 text-green-400 inline-flex items-center">Learn More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                 stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
+                    <h2 class="text-lg text-white font-medium title-font mb-2">ARP Scanning</h2>
+                    <p class="leading-relaxed text-base">Quickly detect live devices in your local network using
+                        ARP-based discovery techniques.</p>
                 </div>
-                <div class="p-4 md:w-1/3 flex">
-                    <div class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-green-400 mb-4 flex-shrink-0">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                             stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-                            <circle cx="6" cy="6" r="3"></circle>
-                            <circle cx="6" cy="18" r="3"></circle>
-                            <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
-                        </svg>
+            </div>
+            <div class="xl:w-1/3 md:w-1/2 p-4">
+                <div class="border border-gray-700 border-opacity-75 p-6 rounded-lg">
+                    <div
+                        class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-gray-800 text-green-400 mb-4">
+                        <i class="bi bi-globe"></i>
                     </div>
-                    <div class="flex-grow pl-6">
-                        <h2 class="text-white text-lg title-font font-medium mb-2">The Catalyzer</h2>
-                        <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast
-                            vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard
-                            ugh iceland kickstarter tumblr live-edge tilde.</p>
-                        <a class="mt-3 text-green-400 inline-flex items-center">Learn More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                 stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
+                    <h2 class="text-lg text-white font-medium title-font mb-2">Custom Ping Tools</h2>
+                    <p class="leading-relaxed text-base">Supports simple ping, flood ping, and latency-adaptive
+                        checks to verify network health.</p>
                 </div>
-                <div class="p-4 md:w-1/3 flex">
-                    <div class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-green-400 mb-4 flex-shrink-0">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                             stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
+            </div>
+            <div class="xl:w-1/3 md:w-1/2 p-4">
+                <div class="border border-gray-700 border-opacity-75 p-6 rounded-lg">
+                    <div
+                        class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-gray-800 text-green-400 mb-4">
+                        <i class="bi bi-hdd-network"></i>
                     </div>
-                    <div class="flex-grow pl-6">
-                        <h2 class="text-white text-lg title-font font-medium mb-2">Neptune</h2>
-                        <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast
-                            vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard
-                            ugh iceland kickstarter tumblr live-edge tilde.</p>
-                        <a class="mt-3 text-green-400 inline-flex items-center">Learn More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                 stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
+                    <h2 class="text-lg text-white font-medium title-font mb-2">Traceroute Mapping</h2>
+                    <p class="leading-relaxed text-base">Visualize the full path from your machine to any IP target
+                        across the globe.</p>
+                </div>
+            </div>
+            <div class="xl:w-1/3 md:w-1/2 p-4">
+                <div class="border border-gray-700 border-opacity-75 p-6 rounded-lg">
+                    <div
+                        class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-gray-800 text-green-400 mb-4">
+                        <i class="bi bi-shield-shaded"></i>
                     </div>
+                    <h2 class="text-lg text-white font-medium title-font mb-2">Nmap Integration</h2>
+                    <p class="leading-relaxed text-base">Perform OS detection, service scans, and stealth probes via
+                        integrated Nmap support.</p>
+                </div>
+            </div>
+            <div class="xl:w-1/3 md:w-1/2 p-4">
+                <div class="border border-gray-700 border-opacity-75 p-6 rounded-lg">
+                    <div
+                        class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-gray-800 text-green-400 mb-4">
+                        <i class="bi bi-sd-card"></i>
+                    </div>
+                    <h2 class="text-lg text-white font-medium title-font mb-2">Result Storage</h2>
+                    <p class="leading-relaxed text-base">Scan results can be stored and reviewed later through a
+                        history interface.</p>
+                </div>
+            </div>
+            <div class="xl:w-1/3 md:w-1/2 p-4">
+                <div class="border border-gray-700 border-opacity-75 p-6 rounded-lg">
+                    <div
+                        class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-gray-800 text-green-400 mb-4">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+                    <h2 class="text-lg text-white font-medium title-font mb-2">Dual Interface</h2>
+                    <p class="leading-relaxed text-base">Choose between Command-Line or Web UI for scanning — as per
+                        your comfort.</p>
                 </div>
             </div>
         </div>
-    </section>
+        <a href="{{ url_for('cli') }}"
+            class="flex mx-auto mt-16 text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg w-60 justify-center">
+            Switch to CLI Mode
+        </a>
+    </div>
+</section>
+
+
+<section class="text-gray-400 body-font">
+    <div class="container px-5 py-20 mx-auto">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font  text-white mb-5">Tech Used
+            <br class="hidden sm:block">
+        </h1>
+        <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
+            <div class="p-4 md:w-1/3 flex">
+                <div
+                    class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-green-400 mb-4 flex-shrink-0">
+                    <i class="bi bi-code"></i>
+                </div>
+                <div class="flex-grow pl-6">
+                    <h2 class="text-white text-lg title-font font-medium mb-2">Core Technologies
+                    </h2>
+                    <p class="leading-relaxed text-base"> Omni-Scanner is powered by Python, leveraging modules like
+                        subprocess, os, and argparse to execute and manage low-level network tasks with precision.
+                        OS-specific scripts are separated cleanly to ensure consistent behavior on Windows and Linux
+                        platforms.
+                    </p>
+
+                </div>
+            </div>
+            <div class="p-4 md:w-1/3 flex">
+                <div
+                    class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-green-400 mb-4 flex-shrink-0">
+                    <i class="bi bi-globe2"></i>
+                </div>
+                <div class="flex-grow pl-6">
+                    <h2 class="text-white text-lg title-font font-medium mb-2">Web Interface & CLI
+                    </h2>
+                    <p class="leading-relaxed text-base"> The frontend is built using HTML5, Tailwind CSS, and Jinja
+                        templating via Flask, ensuring a clean, responsive UI. Each scan result is styled dynamically
+                        with chips, color-coded highlights, and modern components for an intuitive scanning experience.
+                    </p>
+                    <!-- <a class="mt-3 text-green-400 inline-flex items-center">Learn More
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                 stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                            </svg>
+                        </a> -->
+                </div>
+            </div>
+            <div class="p-4 md:w-1/3 flex">
+                <div
+                    class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-green-400 mb-4 flex-shrink-0">
+                    <i class="bi bi-database-check"></i>
+                </div>
+                <div class="flex-grow pl-6">
+                    <h2 class="text-white text-lg title-font font-medium mb-2">Backend & Logic Layer
+                    </h2>
+                    <p class="leading-relaxed text-base"> Flask serves as the backend framework, binding user
+                        interactions to core scan logic. Routes are structured modularly to handle tasks like scanning,
+                        history logging, and error feedback. Python handles data parsing and shell interaction for every
+                        scan type.</p>
+                    <!-- <a class="mt-3 text-green-400 inline-flex items-center">Learn More
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                 stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                            </svg>
+                        </a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
+<section class="text-gray-600 body-font">
+    <div class="container px-5 py-20 mx-auto">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-5 text-white ">Contact Us</h1>
+        <div class="flex flex-wrap -m-4">
 
-    <section class="text-gray-400 body-font">
-        <div class="container px-5 py-24 mx-auto">
-            <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
-                <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-white">Slow-carb next level
-                    shoinddgoitch ethical authentic, scenester sriracha forage.</h1>
-                <button class="flex-shrink-0 text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg mt-10 sm:mt-0">
+            <div class="p-4 md:w-1/3">
+                <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                    <img class="lg:h-48 md:h-36 w-full object-cover object-center"
+                        src="{{ url_for('static', filename='himanshu.jpg') }}" alt="blog">
+                        <div class="p-6 flex">
+                            <div>
+                                <h2 class="tracking-widest text-xs title-font font-semibold text-gray-400 mb-1">FRONTEND</h2>
+                                <h1 class="title-font text-lg font-medium text-white mb-3">Himanshu&nbsp;</h1>
+                            </div>
+                            <!-- <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
+                                microdosing tousled waistcoat.</p> -->
+                            <div class="flex items-center justify-center mx-auto">
+                                <div class="flex space-x-8">
+                                    <!-- Mail -->
+                                    <a href="mailto:himanshu20050118rathee@gmail.com"
+                                        class="text-white hover:text-blue-400 transition transform duration-300 hover:-translate-y-1 hover:scale-110">
+                                        <i class="bi bi-envelope text-4xl"></i>
+                                    </a>
+                                    <!-- GitHub -->
+                                    <a href="https://github.com/Himanshu20050118" target="_blank"
+                                        class="text-white hover:text-gray-400 transition transform duration-300 hover:-translate-y-1 hover:scale-110">
+                                        <i class="bi bi-github text-4xl"></i>
+                                    </a>
+                                    <!-- LinkedIn -->
+                                    <a href="https://www.linkedin.com/in/himanshu20050118/" target="_blank"
+                                        class="text-white hover:text-blue-600 transition transform duration-300 hover:-translate-y-1 hover:scale-110">
+                                        <i class="bi bi-linkedin text-4xl"></i>
+                                    </a>
+                                    <!-- Signal -->
+                                    <!-- <a href="https://signal.org/"
+                                        class="text-white hover:text-blue-500 transition transform duration-300 hover:-translate-y-1 hover:scale-110">
+                                        <i class="bi bi-signal text-4xl"></i>
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+
+            <div class="p-4 md:w-1/3">
+                <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                    <img class="lg:h-48 md:h-36 w-full object-cover object-center"
+                        src="{{ url_for('static', filename='kartik.png') }}" alt="blog">
+                    <div class="p-6 flex">
+                        <div>
+                            <h2 class="tracking-widest text-xs title-font font-semibold text-gray-400 mb-1">BACKEND</h2>
+                            <h1 class="title-font text-lg font-medium text-white mb-3">Kartik</h1>
+                        </div>
+                        <!-- <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
+                            microdosing tousled waistcoat.</p> -->
+                        <div class="flex items-center justify-center mx-auto">
+                            <div class="flex space-x-5">
+                                <!-- Mail -->
+                                <a href="mailto:kartik2005221@proton.me"
+                                    class="text-white hover:text-blue-400 transition transform duration-300 hover:-translate-y-1 hover:scale-110">
+                                    <i class="bi bi-envelope text-4xl"></i>
+                                </a>
+                                <!-- GitHub -->
+                                <a href="https://github.com/kartik2005221" target="_blank"
+                                    class="text-white hover:text-gray-400 transition transform duration-300 hover:-translate-y-1 hover:scale-110">
+                                    <i class="bi bi-github text-4xl"></i>
+                                </a>
+                                <!-- LinkedIn -->
+                                <a href="https://www.linkedin.com/in/kartik2005221/" target="_blank"
+                                    class="text-white hover:text-blue-600 transition transform duration-300 hover:-translate-y-1 hover:scale-110">
+                                    <i class="bi bi-linkedin text-4xl"></i>
+                                </a>
+                                <!-- Signal -->
+                                <a href="https://signal.me/#eu/NKRjNORoYBKevqLxymZOoG7HZv5v_YBZ3hSgA8r5FsJ-0I-yzu9OGYJQS8jiXVgZ" target="_blank"
+                                    class="text-white hover:text-blue-500 transition transform duration-300 hover:-translate-y-1 hover:scale-110">
+                                    <i class="bi bi-signal text-4xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="p-4 md:w-1/3">
+                <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                    <img class="lg:h-48 md:h-36 w-full object-cover object-center"
+                        src="{{ url_for('static', filename='navrattan2.png') }}" alt="blog">
+
+                    <div class="p-6 flex">
+                        <div>
+                            <h2 class="tracking-widest text-xs title-font font-semibold text-gray-400 mb-1">DATA MANAGEMENT&nbsp;
+                            </h2>
+                            <h1 class="title-font text-lg font-medium text-white mb-3">Navrattan&nbsp;</h1>
+                        </div>
+                        <!-- <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
+                            microdosing tousled waistcoat.</p> -->
+                        <div class="flex items-center justify-center mx-auto">
+                            <div class="flex space-x-8">
+                                <!-- Mail -->
+                                <a href="mailto:ntnpannu@gmail.com"target
+                                    class="text-white hover:text-blue-400 transition transform duration-300 hover:-translate-y-1 hover:scale-110">
+                                    <i class="bi bi-envelope text-4xl"></i>
+                                </a>
+                                <!-- GitHub -->
+                                <a href="https://github.com/Nitin-pannu" target="_blank"
+                                    class="text-white hover:text-gray-400 transition transform duration-300 hover:-translate-y-1 hover:scale-110">
+                                    <i class="bi bi-github text-4xl"></i>
+                                </a>
+                                <!-- LinkedIn -->
+                                <a href="https://www.linkedin.com/in/navrattan-pannu-a0287b334/" target="_blank"
+                                    class="text-white hover:text-blue-600 transition transform duration-300 hover:-translate-y-1 hover:scale-110">
+                                    <i class="bi bi-linkedin text-4xl"></i>
+                                </a>
+                                <!-- Signal -->
+                                <!-- <a href="https://signal.org/"
+                                    class="text-white hover:text-blue-500 transition transform duration-300 hover:-translate-y-1 hover:scale-110">
+                                    <i class="bi bi-signal text-4xl"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+</section>
+
+
+<section class="text-gray-400 body-font">
+    <div class="container px-5 py-20 mx-auto">
+        <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
+            <h1 class="flex-grow sm:pr-16 text-3xl font-semibold title-font text-white text-center"> <i
+                    class="bi bi-exclamation-triangle"></i> Notice
+                <p class="leading-relaxed text-base text-red-300 my-3">Obtain written permission before scanning
+                    networks you
+                    do not own.<br>Use Omni Scanner only for educational and ethical purposes.</p>
+            </h1>
+            <!-- <button class="flex-shrink-0 text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg mt-10 sm:mt-0">
                     Button
-                </button>
-            </div>
+                </button> -->
         </div>
-    </section>
-
-
-
-
-    <section class="text-gray-400 body-font">
-        <div class="container flex flex-wrap px-5 py-24 mx-auto items-center">
-            <div class="md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 md:mb-0 mb-10 pb-10 border-b border-gray-800">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">Pitchfork Kickstarter
-                    Taxidermy</h1>
-                <p class="leading-relaxed text-base">Locavore cardigan small batch roof party blue bottle blog meggings
-                    sartorial jean shorts kickstarter migas sriracha church-key synth succulents. Actually taiyaki
-                    neutra, distillery gastropub pok pok ugh.</p>
-                <a class="text-green-400 inline-flex items-center mt-4">Learn More
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                         stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                </a>
-            </div>
-            <div class="flex flex-col md:w-1/2 md:pl-12">
-                <h2 class="title-font font-semibold text-white tracking-wider text-sm mb-3">CATEGORIES</h2>
-                <nav class="flex flex-wrap list-none -mb-1">
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="hover:text-white">First Link</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="hover:text-white">Second Link</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="hover:text-white">Third Link</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="hover:text-white">Fourth Link</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="hover:text-white">Fifth Link</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="hover:text-white">Sixth Link</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="hover:text-white">Seventh Link</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="hover:text-white">Eighth Link</a>
-                    </li>
-                </nav>
-            </div>
-        </div>
-    </section>
-
-
-
-
-    <section class="text-gray-400 body-font">
-        <div class="container flex flex-wrap px-5 py-24 mx-auto items-center">
-            <div class="md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 md:mb-0 mb-10 pb-10 border-b border-gray-800">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">Pitchfork Kickstarter
-                    Taxidermy</h1>
-                <p class="leading-relaxed text-base">Locavore cardigan small batch roof party blue bottle blog meggings
-                    sartorial jean shorts kickstarter migas sriracha church-key synth succulents. Actually taiyaki
-                    neutra, distillery gastropub pok pok ugh.</p>
-                <a class="text-green-400 inline-flex items-center mt-4">Learn More
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                         stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                </a>
-            </div>
-            <div class="flex flex-col md:w-1/2 md:pl-12">
-                <h2 class="title-font font-semibold text-white tracking-wider text-sm mb-3">CATEGORIES</h2>
-                <nav class="flex flex-wrap list-none -mb-1">
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="hover:text-white">First Link</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="hover:text-white">Second Link</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="hover:text-white">Third Link</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="hover:text-white">Fourth Link</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="hover:text-white">Fifth Link</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="hover:text-white">Sixth Link</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="hover:text-white">Seventh Link</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="hover:text-white">Eighth Link</a>
-                    </li>
-                </nav>
-            </div>
-        </div>
-    </section>
-
-
-
+    </div>
+</section>
 
 
 {% endblock %}
