@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}Switch To Sudo{% endblock %}
+
+{% block head %}
+    <script src="{{ url_for('static', filename='js/warning_in_index.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+
+    <div class="flex justify-center items-center p-4">
+        {% if sudo_status is not none %}
+            {% if sudo_status %}
+                <div
+                        id="sudo-warning"
+                        role="alert"
+                        class="bg-green-100 dark:bg-green-900 border-l-4 border-green-500 dark:border-green-700 text-green-900 dark:text-green-100 p-4 rounded-lg flex items-center transition duration-300 ease-in-out hover:bg-green-200 dark:hover:bg-green-800 transform hover:scale-105 cursor-pointer"
+                        onclick="dismissWarning()"
+                >
+                    <p class="text-sm font-semibold">Running with sudo privileges. Full functionality available.</p>
+                </div>
+            {% else %}
+                <div
+                        id="sudo-warning"
+                        role="alert"
+                        class="bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-700 text-red-900 dark:text-red-100 p-4 rounded-lg flex items-center transition duration-300 ease-in-out hover:bg-red-200 dark:hover:bg-red-800 transform hover:scale-105 cursor-pointer"
+                        onclick="dismissWarning()"
+                >
+                    <p class="text-sm font-semibold">Not running with sudo privileges. Limited functionality
+                        available.</p>
+{#                    <a href="{{ url_for('switch_sudo') }}" class="text-blue-500 underline">Switch to sudo mode</a>#}
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <div class="text-white font-sans">
+    <div class="max-w-4xl mx-auto px-4 py-10">
+        <h1 class="text-4xl font-bold text-center text-blue-400 mb-6">Switching to Sudo Mode</h1>
+        <p class="text-lg text-gray-300 text-center mb-10">Certain Omni-Scanner features require elevated privileges
+            (like ARP scan, ping flood, or port scan).
+            <br>Here's how to switch to <code
+                    class="bg-gray-800 text-green-300 px-1 rounded">sudo</code> mode.</p>
+
+        <!-- Linux Section -->
+        <div class="bg-gray-950 border rounded-xl shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-blue-300 mb-2">Linux/WSL Users</h2>
+            <ul class="list-disc list-inside text-gray-200 space-y-2">
+                <li>Open your terminal.</li>
+                <li>Type <code class="bg-gray-900 px-2 rounded text-green-300">sudo python3 app.py</code> and press
+                    Enter.
+                </li>
+                <li>Enter your password (input is hidden — type and hit Enter).</li>
+                <li>If <code>Permission denied</code> appears, ensure your user is in the <code>sudoers</code> group.
+                </li>
+                <li>Optional: Make script executable using <code class="bg-gray-900 px-2 rounded text-green-300">chmod
+                    +x main.py</code>.
+                </li>
+            </ul>
+        </div>
+
+{#        <!-- Windows Section -->#}
+{#        <div class="bg-gray-800 rounded-xl shadow-md p-6 mb-8">#}
+{#            <h2 class="text-2xl font-semibold text-yellow-300 mb-2">🪟 Windows Users</h2>#}
+{#            <ul class="list-disc list-inside text-gray-200 space-y-2">#}
+{#                <li>Right-click on <code class="bg-gray-900 px-2 rounded text-green-300">Command Prompt</code> or <code>PowerShell</code>.#}
+{#                </li>#}
+{#                <li>Select <strong>“Run as Administrator”</strong>.</li>#}
+{#                <li>Navigate to the Omni-Scanner folder using:#}
+{#                    <br><code class="bg-gray-900 px-2 rounded text-green-300">cd path\to\Omni-Scanner</code>#}
+{#                </li>#}
+{#                <li>Run: <code class="bg-gray-900 px-2 rounded text-green-300">python main.py</code></li>#}
+{#                <li>Ensure you’ve installed <strong>Npcap</strong> and allowed admin access when prompted.</li>#}
+{#            </ul>#}
+{#        </div>#}
+
+        <!-- Tips & Warnings -->
+        <div class="bg-red-900 bg-opacity-30 border border-red-500 text-red-200 p-4 rounded-lg">
+            <h3 class="text-lg font-semibold mb-1">⚠️ Important Notes</h3>
+            <ul class="list-disc list-inside text-sm space-y-1">
+                <li>Never share your <code>sudo</code> password with anyone.</li>
+                <li>Be cautious when scanning networks. Always follow ethical guidelines.</li>
+                <li>Run only the intended scripts inside Omni-Scanner directory.</li>
+            </ul>
+        </div>
+        <div class="mt-12 flex justify-between items-center">
+            <a href="{{ url_for('home') }}" class="text-blue-400 hover:underline text-lg">&larr; Back</a>
+            <span class="text-sm text-gray-500">Made with ❤️ and terminal mastery</span>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}
