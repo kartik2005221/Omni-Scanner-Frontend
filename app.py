@@ -27,6 +27,11 @@ def switch_sudo():
         sudo_status = None
     return render_template('switch_sudo.html', sudo_status=sudo_status)
 
+
+@app.route('/scan')
+def scan():
+    return render_template('scan.html')
+
 @app.route('/about')
 def about():
     """About page route"""
