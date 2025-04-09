@@ -2,7 +2,37 @@
 
 {% block title %}Home{% endblock %}
 
+{% block head %}
+    <script src="{{ url_for('static', filename='js/warning_in_index.js') }}"></script>
+{% endblock %}
+
 {% block body %}
+    <div class="flex justify-center items-center p-4">
+        {% if sudo_status is not none %}
+            {% if sudo_status %}
+                <div
+                        id="sudo-warning"
+                        role="alert"
+                        class="bg-green-100 dark:bg-green-900 border-l-4 border-green-500 dark:border-green-700 text-green-900 dark:text-green-100 p-4 rounded-lg flex items-center transition duration-300 ease-in-out hover:bg-green-200 dark:hover:bg-green-800 transform hover:scale-105 cursor-pointer"
+                        onclick="dismissWarning()"
+                >
+                    <p class="text-sm font-semibold">Running with sudo privileges. Full functionality available.</p>
+                </div>
+            {% else %}
+                <div
+                        id="sudo-warning"
+                        role="alert"
+                        class="bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-700 text-red-900 dark:text-red-100 p-4 rounded-lg flex items-center transition duration-300 ease-in-out hover:bg-red-200 dark:hover:bg-red-800 transform hover:scale-105 cursor-pointer"
+                >
+                    <a href="{{ url_for('switch_sudo') }}" class="text-sm font-semibold flex">Not running with sudo privileges. Limited functionality
+                        available.&nbsp;<p class="text-blue-500 underline">Switch to sudo
+                            mode</p>
+                    </a>
+
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
     lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas
     congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero
     egestas mattis sit amet vitae augue. Nam tincidunt est et tortor aliquet, id venenatis a, commodo non nisi.

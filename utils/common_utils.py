@@ -9,32 +9,13 @@ oper_system = Oper_system.lower()
 def splash_screen():
     """To print the splash screen"""
     print(r'''                                  
-               AAA                 iiii  RRRRRRRRRRRRRRRRR   
-              A:::A               i::::i R::::::::::::::::R  
-             A:::::A               iiii  R::::::RRRRRR:::::R 
-            A:::::::A                    RR:::::R     R:::::R
-           A:::::::::A           iiiiiii   R::::R     R:::::R
-          A:::::A:::::A          i:::::i   R::::R     R:::::R
-         A:::::A A:::::A          i::::i   R::::RRRRRR:::::R 
-        A:::::A   A:::::A         i::::i   R:::::::::::::RR  
-       A:::::A     A:::::A        i::::i   R::::RRRRRR:::::R 
-      A:::::AAAAAAAAA:::::A       i::::i   R::::R     R:::::R
-     A:::::::::::::::::::::A      i::::i   R::::R     R:::::R
-    A:::::AAAAAAAAAAAAA:::::A     i::::i   R::::R     R:::::R
-   A:::::A             A:::::A   i::::::iRR:::::R     R:::::R
-  A:::::A               A:::::A  i::::::iR::::::R     R:::::R
- A:::::A                 A:::::A i::::::iR::::::R     R:::::R
-AAAAAAA                   AAAAAAAiiiiiiiiRRRRRRRR     RRRRRRR
+   ____                     _   _____                                       
+  / __ \                   (_) / ____|                                      
+ | |  | | _ __ ___   _ __   _ | (___    ___  __ _  _ __   _ __    ___  _ __ 
+ | |  | || '_ ` _ \ | '_ \ | | \___ \  / __|/ _` || '_ \ | '_ \  / _ \| '__|
+ | |__| || | | | | || | | || | ____) || (__| (_| || | | || | | ||  __/| |   
+  \____/ |_| |_| |_||_| |_||_||_____/  \___|\__,_||_| |_||_| |_| \___||_|   
 
-                  ***********************************************************************
-                  ***********************************************************************
-                  ****                                                               ****
-                  ****                © Copyright of Kartik - 2025                   ****
-                  ****                                                               ****
-                  ***********************************************************************
-                  *****************************************************[Ethical Use Only]
-                  
-## Welcome to Kartik's OmniScanner
 ''')
     # print(f"## Welcome to Kartik's OmniScanner ({Oper_system} Version)")
 
