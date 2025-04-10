@@ -111,7 +111,8 @@ def start_flood_ping():
     if platform.system() == "Windows":
         return jsonify({
             "success": False,
-            "error": "Flood ping is not supported on your operating system. Learn more at <a href='/flood_ping_info'>this link</a>."
+            "error": "Flood ping is not supported on your operating system. Learn more at "
+                     "<a href='/switch_linux'>this link</a>."
         })
 
     ip = request.args.get('ip')
@@ -163,6 +164,12 @@ def switch_sudo():
     else:
         sudo_status = None
     return render_template('switch_sudo.html', sudo_status=sudo_status)
+
+
+@app.route('/switch_linux')
+def switch_linux():
+    """Switch Linux page route"""
+    return render_template('switch_linux.html')
 
 
 @app.route('/result')
