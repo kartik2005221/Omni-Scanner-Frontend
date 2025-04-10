@@ -6,6 +6,10 @@ import subprocess
 def arp_scan_windows():
     return "Sorry, This option is not available in your operating system"
 
+def arp_scan_nmap_windows(ip, interactive=False):
+    return run_command(interactive, ["nmap", "-sn", "-T5", "--min-parallelism", "100",
+                    "--host-timeout", "2000ms", ip])
+
 def level_1():
     """Menu Based : All IP Scanner"""
     while True:
@@ -24,8 +28,7 @@ def level_1():
             ip_addr = input("Enter range of IPs (eg. 192.168.1.1-255)\n::: ") or "127.0.0.1"
             if validate_ip_range(ip_addr):
                 if input2 == '2':
-                    subprocess.run(["nmap", "-sn", "-T5", "--min-parallelism", "100",
-                                 "--host-timeout", "2000ms", ip_addr])
+                    arp_scan_nmap_windows(ip_addr, interactive=True)
 
                 elif input2 == '3':
                     # try:

@@ -106,7 +106,7 @@ def run_nmap_scan_big(ip_range):
 
     except KeyboardInterrupt:
         process.terminate()  # Kill Nmap process if the user presses Ctrl+C
-        print("\nStopping...")
+        print("\n[Ctrl - C] Stopping...")
 
 
 # def get_ip():

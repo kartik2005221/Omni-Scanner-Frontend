@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Temp page{% endblock %}
+{% block title %}1 → 1. ARP Scan{% endblock %}
 
 {% block body %}
     <h1>ARP Scan Results</h1>
@@ -25,7 +25,7 @@
     <div id="results"></div>
 
 {% endblock %}
-    {% block scripts %}
+{% block scripts %}
         document.addEventListener("DOMContentLoaded", function () {
             const loading = document.getElementById("loading");
             const results = document.getElementById("results");

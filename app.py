@@ -1,15 +1,14 @@
 import platform
 
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 
-from OS_scripts.linux import arp_scan_linux
-from OS_scripts.windows import arp_scan_windows
+from OS_scripts.linux import arp_scan_linux, arp_scan_nmap_linux
+from OS_scripts.windows import arp_scan_windows, arp_scan_nmap_windows
 from utils.administrative_utils import is_sudo_linux
 
 app = Flask(__name__)
 
 
-@app.route('/scan')
 @app.route('/')
 def home():
     """Home page route"""
@@ -24,19 +23,43 @@ def home():
 def api_arp_scan():
     try:
         if platform.system() == "Windows":
-            arp_scan_ = arp_scan_windows()
+            arp_scan = arp_scan_windows()
         else:
-            arp_scan_ = arp_scan_linux()
-        return jsonify({"success": True, "results": arp_scan_})
+            arp_scan = arp_scan_linux()
+        return jsonify({"success": True, "results": arp_scan})
     except Exception as e:
         return jsonify({"success": False, "error": str(e)})
 
 
 @app.route('/arp_scan')
 def arp_scan_page():
+    """ARP Scan page route"""
     # arp_scan_ = arp_scan()
     # return render_template('arp_scan.html', arp_scan=arp_scan_)
     return render_template("arp_scan.html")
+
+
+@app.route('/api/arp_scan_nmap')
+def api_arp_scan_nmap():
+    try:
+        ip = request.args.get('ip')
+        if not ip:
+            return jsonify({"success": False, "error": "IP address is required."})
+
+        if platform.system() == "Windows":
+            arp_scan_nmap = arp_scan_nmap_windows(ip)
+        else:
+            arp_scan_nmap = arp_scan_nmap_linux(ip)
+
+        return jsonify({"success": True, "results": arp_scan_nmap})
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)})
+
+
+@app.route('/arp_scan_nmap')
+def arp_scan_nmap_page():
+    """ARP Scan Nmap page route"""
+    return render_template('arp_scan_nmap.html')
 
 
 @app.route('/switch_sudo')

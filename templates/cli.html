@@ -49,16 +49,16 @@ OmniScanner CLI
             <aside class="bg-gray-950 text-white p-6 rounded-lg w-full font-mono">
                 <div class="flex items-center">
                     <p class="text-green-400">$&nbsp</p>
-                    <p class="text-green-400">git clone https://github.com/kartik2005221/Omni-Scanner.git</p>
-                    <button
+                    <p class="text-green-400" id="clone-command">git clone https://github.com/kartik2005221/Omni-Scanner.git</p>
+                    <button data-copy="clone-command"
                         class="ml-auto text-sm px-4 py-2 border text-white rounded-xl cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-500 hover:shadow-lg hover:scale-105 active:scale-95">
                         Copy
                     </button>
                 </div>
                 <div class="flex items-center mt-4">
                     <p class="text-green-400">$&nbsp</p>
-                    <p class="text-green-400">cd Omni-Scanner</p>
-                    <button
+                    <p class="text-green-400" id="change-dir">cd Omni-Scanner</p>
+                    <button data-copy="change-dir"
                         class="ml-auto text-sm px-4 py-2 border text-white rounded-xl cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-500 hover:shadow-lg hover:scale-105 active:scale-95">
                         Copy
                     </button>
@@ -75,8 +75,8 @@ OmniScanner CLI
             <aside class="bg-gray-950 text-white p-6 rounded-lg w-full font-mono">
                 <div class="flex items-center">
                     <p class="text-green-400">$&nbsp</p>
-                    <p class="text-green-400">pip install -r requirements.txt</p>
-                    <button
+                    <p class="text-green-400" id="install-requirement">pip install -r requirements.txt</p>
+                    <button data-copy="install-requirement"
                         class="ml-auto text-sm px-4 py-2 border text-white rounded-xl cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-500 hover:shadow-lg hover:scale-105 active:scale-95">
                         Copy
                     </button>
@@ -92,8 +92,8 @@ OmniScanner CLI
             <aside class="bg-gray-950 text-white p-6 rounded-lg w-full font-mono">
                 <div class="flex items-center">
                     <p class="text-green-400">$&nbsp</p>
-                    <p class="text-green-400">python main.py</p>
-                    <button
+                    <p class="text-green-400" id="run-main.py">python main.py</p>
+                    <button data-copy="run-main.py"
                         class="ml-auto text-sm px-4 py-2 border text-white rounded-xl cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-500 hover:shadow-lg hover:scale-105 active:scale-95">
                         Copy
                     </button>
@@ -135,3 +135,5 @@ OmniScanner CLI
 
 
 {% endblock %}
+
+{% block script_tag %}<script src="{{ url_for('static', filename='js/copy.js') }}"></script>{% endblock %}

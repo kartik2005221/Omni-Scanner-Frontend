@@ -13,7 +13,7 @@ def arp_scan_linux(interactive=False):
         return run_command(interactive, command)
 
 
-def arp_scan_nmap(ip, interactive=False):
+def arp_scan_nmap_linux(ip, interactive=False):
     return run_command(interactive, ["nmap", "-sn", "-T5", "--min-parallelism", "100",
                                      "--host-timeout", "2000ms", ip])
 
@@ -36,7 +36,7 @@ def level_1():
             ip_addr = input("Enter range of IPs (eg. 192.168.1.1-255)\n::: ") or "127.0.0.1"
             if validate_ip_range(ip_addr):
                 if input2 == '2':
-                    arp_scan_nmap(ip=ip_addr, interactive=True)
+                    arp_scan_nmap_linux(ip=ip_addr, interactive=True)
 
                 elif input2 == '3':
                     # try:
