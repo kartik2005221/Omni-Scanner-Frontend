@@ -13,3 +13,23 @@ header {
     z-index: 1000; /* Ensures it stays above other elements */
     background: linear-gradient(to right, #0f5ff3, #f20367); /* Retains the gradient background */
 }
+
+
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make the main content area grow to fill available space */
+.content {
+    flex: 1;
+}
+
+/* Optional: Add padding or margin to the footer if needed */
+footer {
+    margin-top: auto;
+}

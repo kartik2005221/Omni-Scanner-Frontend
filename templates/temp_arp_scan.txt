@@ -1,0 +1,58 @@
+<h1 class="text-4xl font-bold text-green-400 mb-6 text-center py-10">ARP Scan Results</h1>
+    <div id="loading" style="display: none;text-align: center;">
+        <button
+                class="inline-block rounded-full bg-green-500 text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-green-600 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-green-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-green-700 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
+                type="button"
+        >
+            <div
+                    role="status"
+                    class="inline-block h-3 w-3 mr-2 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+            >
+                <span
+                        class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+                >
+                    Loading...
+                </span>
+            </div>
+            Running Scan
+        </button>
+    </div>
+    <!-- <div class="flex justify-center items-center mt-10">
+        <aside class="bg-black text-white p-6 rounded-lg w-full max-w-lg font-mono">
+            <div class="flex justify-between items-center mb-2">
+                <p class="text-green-400">$command</p>
+                <div class="flex space-x-2 text-red-500"></div>
+                <p class="text-sm">Copy</p>
+            </div>
+            <div class="mt-4">
+                <div id="results" class="text-white whitespace-pre-wrap"></div>
+            </div>
+        </aside>
+    </div> -->
+    <div class="flex justify-center items-center mt-10">
+        <aside class="bg-black text-white p-6 rounded-lg w-full max-w-lg font-mono">
+            <div class="flex justify-between items-center mb-2">
+                <p class="text-green-400">$&nbsp;</p>
+                <p class="text-green-400" id="arp-scan-command">sudo arp-scan -l</p>
+                <button data-copy="arp-scan-command"
+                        class="ml-auto text-sm px-4 py-2 border text-white rounded-xl cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-500 hover:shadow-lg hover:scale-105 active:scale-95">
+                        Copy
+                    </button>
+            </div>
+            <div id="results" class="text-white whitespace-pre-wrap overflow-auto max-h-64"></div>
+        </aside>
+    </div>
+
+    <!-- <div id="results"></div> -->
+<!-- <aside class="bg-black text-white p-6 rounded-lg w-full max-w-lg font-mono">
+  <div class="flex justify-between items-center">
+    <div class="flex space-x-2 text-red-500">
+     
+    </div>
+    <p class="text-sm">Copy</p>
+  </div>
+  <div class="mt-4">
+    <p class="text-green-400">$command</p>
+    <p class="text-white"> <div id="results"></div></p>
+  </div>
+</aside> -->
