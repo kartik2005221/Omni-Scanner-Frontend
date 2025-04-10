@@ -1,7 +1,8 @@
 import platform
 
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 
+from OS_scripts.linux import arp_scan
 from utils.administrative_utils import is_sudo_linux
 
 app = Flask(__name__)
@@ -18,6 +19,22 @@ def home():
     return render_template('index.html', sudo_status=sudo_status)
 
 
+@app.route('/api/arp_scan')
+def api_arp_scan():
+    try:
+        arp_scan_ = arp_scan()
+        return jsonify({"success": True, "results": arp_scan_})
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)})
+
+
+@app.route('/arp_scan')
+def arp_scan_page():
+    # arp_scan_ = arp_scan()
+    # return render_template('arp_scan.html', arp_scan=arp_scan_)
+    return render_template("arp_scan.html")
+
+
 @app.route('/switch_sudo')
 def switch_sudo():
     """Switch Sudo page route"""
@@ -27,19 +44,16 @@ def switch_sudo():
         sudo_status = None
     return render_template('switch_sudo.html', sudo_status=sudo_status)
 
+
 @app.route('/result')
 def result():
     """Result page route"""
     return render_template('result.html')
 
+
 @app.route('/scan')
 def scan():
     return render_template('scan.html')
-
-@app.route('/about')
-def about():
-    """About page route"""
-    return render_template('about.html')
 
 
 @app.route('/history')
@@ -54,6 +68,10 @@ def cli():
     return render_template('cli.html')
 
 
+@app.route('/about')
+def about():
+    """About page route"""
+    return render_template('about.html')
 
 
 @app.errorhandler(404)

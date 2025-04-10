@@ -1,5 +1,6 @@
 from utils.common_utils import documentation
-from utils.menu_utils import traceroute_all_os, validate_ip, validate_ip_range, run_nmap_scan_big, run_command
+from utils.menu_utils import traceroute_all_os, validate_ip, validate_ip_range, run_nmap_scan_big
+import subprocess
 
 
 def level_1():
@@ -20,7 +21,7 @@ def level_1():
             ip_addr = input("Enter range of IPs (eg. 192.168.1.1-255)\n::: ") or "127.0.0.1"
             if validate_ip_range(ip_addr):
                 if input2 == '2':
-                    run_command(["nmap", "-sn", "-T5", "--min-parallelism", "100",
+                    subprocess.run(["nmap", "-sn", "-T5", "--min-parallelism", "100",
                                  "--host-timeout", "2000ms", ip_addr])
 
                 elif input2 == '3':
@@ -60,14 +61,14 @@ def level_2():
                         ping_count = "-t"
 
                     if input2 == '1':
-                        run_command(["ping", ping_count, ip_addr])
+                        subprocess.run(["ping", ping_count, ip_addr])
 
                     elif input2 == '2':
-                          run_command(
+                          subprocess.run(
                             ["ping", ping_count, "-l", input("Enter size of packet to send (0-65500)"), ip_addr])
 
                     elif input2 == '3':
-                          run_command(
+                          subprocess.run(
                             ["ping", ping_count, "-w", str(int(input("How much time (sec.) to wait?\n::: ")) * 1000),
                              ip_addr])
 
@@ -111,7 +112,7 @@ def level_4():
             ip_addr = input("Enter IP to scan(eg - 192.168.1.1)\n::: ") or "127.0.0.1"
             if validate_ip(ip_addr):
                 if '1' in input2:
-                      run_command(["nmap", ip_addr])
+                      subprocess.run(["nmap", ip_addr])
 
                 else:
                     new_input2 = input2.split("")
@@ -142,7 +143,7 @@ def level_4():
 
                     list_of_commands.append(ip_addr)
                     print(list_of_commands)
-                    run_command(list_of_commands)
+                    subprocess.run(list_of_commands)
 
             else:
                 print("Invalid IP entered, Please Try again")
@@ -180,7 +181,7 @@ Select a Option :
         elif input1 == '4':
             level_4()
         elif input1 == '5':
-              run_command(["ipconfig"])
+              subprocess.run(["ipconfig"])
 
         else:
             print("Unsupported Option selected, Please Try again")

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Temp page{% endblock %}
+
+{% block body %}
+    <h1>ARP Scan Results</h1>
+    <div id="loading" style="display: none;">
+        <button
+                class="inline-block rounded-full bg-green-500 text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-green-600 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-green-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-green-700 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
+                type="button"
+        >
+            <div
+                    role="status"
+                    class="inline-block h-3 w-3 mr-2 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+            >
+                <span
+                        class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+                >
+                    Loading...
+                </span>
+            </div>
+            Running Scan
+        </button>
+    </div>
+    <div id="results"></div>
+
+{% endblock %}
+    {% block scripts %}
+        document.addEventListener("DOMContentLoaded", function () {
+            const loading = document.getElementById("loading");
+            const results = document.getElementById("results");
+
+            // Show loading animation
+            loading.style.display = "block";
+
+            // Fetch ARP scan results
+            fetch("/api/arp_scan")
+                .then((response) => response.json())
+                .then((data) => {
+                    // Hide loading animation
+                    loading.style.display = "none";
+
+                    // Display results
+                    if (data.success) {
+                        results.innerHTML = `<pre>${data.results}</pre>`;
+                    } else {
+                        results.innerHTML = `<p>Error: ${data.error}</p>`;
+                    }
+                })
+                .catch((error) => {
+                    loading.style.display = "none";
+                    results.innerHTML = `<p>Error: ${error.message}</p>`;
+                });
+        });
+{% endblock %}

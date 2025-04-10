@@ -6,25 +6,37 @@ import time
 import sys
 
 
-def run_command(command):
+# def run_command(command):
+#     """Running commands, with subprocess
+#     :param command: Command to run"""
+#     print("\nExecuting: ", end="")
+#     for i in command:
+#         print(i, end=" ")
+#     print()
+#     subprocess.run(command)
+#     input("Press Enter to continue...")
+
+def run_command(interactive, command):
     """Running commands, with subprocess
-    :param command: Command to run"""
-    print("\nExecuting: ", end="")
-    for i in command:
-        print(i, end=" ")
-    print()
-    subprocess.run(command)
-    input("Press Enter to continue...")
+    :param interactive: If True, run in interactive mode
+    :param command: Command to run
+    :returns: Output of the command if not interactive, else None"""
+    if interactive:
+        print(f"\nExecuting: {' '.join(command)}")
+        return subprocess.run(command)
+    else:
+        result = subprocess.run(command, capture_output=True, text=True)
+        return result.stdout
 
 
 def traceroute_all_os():
     """Just a Simple Traceroute Function
     :returns : 0"""
     if oper_system() == "Windows":
-        run_command(["tracert", input("Enter IP for traceroute : ")])
+        subprocess.run(["tracert", input("Enter IP for traceroute : ")])
         input("Press Enter to continue...")
     else:
-        run_command(["traceroute", input("Enter IP for traceroute : ")])
+        subprocess.run(["traceroute", input("Enter IP for traceroute : ")])
     return 0
 
 
@@ -100,13 +112,13 @@ def run_nmap_scan_big(ip_range):
 # def get_ip():
 #     """Get the IP address of the current system"""
 #     if oper_system() == "Windows":
-#         run_command(["ipconfig"])
+#         subprocess.run(["ipconfig"])
 #     else:
-#         run_command(["ip", "addr"])
+#         subprocess.run(["ip", "addr"])
 
 
 # sample codes for reference
-# result = run_command(["arp-scan", "-l"], capture_output=True, text=True)
+# result = subprocess.run(["arp-scan", "-l"], capture_output=True, text=True)
 # print("Output:", result.stdout)
 # print("Error:", result.stderr)
 # print("Return Code:", result.returncode)
