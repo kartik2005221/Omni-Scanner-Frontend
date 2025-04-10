@@ -21,6 +21,26 @@ def arp_scan_nmap_linux(ip, interactive=False):
 def flood_ping_linux(ip, interactive=False):
     return run_command(interactive, ["sudo", "ping", "-f", ip])
 
+def ping_count_number(ping_count_, command):
+    if ping_count_:
+        command.insert(1, ping_count_)
+    else:
+        command.insert(1, 5)
+
+def simple_ping_linux(ip, ping_count_, interactive=False):
+    command = ["ping", ip]
+    ping_count_number(ping_count_, command)
+    return run_command(interactive, command)
+
+def large_ping_linux(ip, ping_count_, size, interactive=False):
+    command = ["ping", ip, "-s", size]
+    ping_count_number(ping_count_, command)
+    return run_command(interactive, command)
+
+def slow_ping_linux(ip, ping_count_, time,  interactive=False):
+    command = ["ping", ip, "-W", time]
+    ping_count_number(ping_count_, command)
+    return run_command(interactive, command)
 
 def level_1():
     """Menu Based : All IP Scanner"""
@@ -85,22 +105,15 @@ def level_2():
                         ping_count = ""
 
                     if input2 == '1':
-                        command = ["ping", ip_addr]
-                        if ping_count:
-                            command.insert(1, ping_count)
-                        subprocess.run(command)
+                        simple_ping_linux(ip_addr, ping_count, interactive=True)
 
                     elif input2 == '2':
-                        command = ["ping", ip_addr, "-s", input("Enter size of packet to send (0-65500)\n::: ") or '56']
-                        if ping_count:
-                            command.insert(1, ping_count)
-                        subprocess.run(command)
+                        size = input("Enter size of packet to send (0-65500)\n::: ") or '56'
+                        large_ping_linux(ip_addr, ping_count, size, interactive=True)
 
                     elif input2 == '3':
-                        command = ["ping", ip_addr, "-W", input("How much time(sec.) to wait? \n::: ") or '1']
-                        if ping_count:
-                            command.insert(1, ping_count)
-                        subprocess.run(command)
+                        scan_time = input("How much time(sec.) to wait? \n::: ") or '1'
+                        slow_ping_linux(ip_addr, ping_count, scan_time, interactive=True)
 
                     # elif input2 == '4':
                     #     if is_sudo_linux() == 1:
