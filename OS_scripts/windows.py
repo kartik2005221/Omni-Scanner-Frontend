@@ -1,7 +1,10 @@
 from utils.common_utils import documentation
-from utils.menu_utils import traceroute_all_os, validate_ip, validate_ip_range, run_nmap_scan_big
+from utils.menu_utils import traceroute_all_os, validate_ip, validate_ip_range, run_nmap_scan_big, run_command
 import subprocess
 
+
+def arp_scan_windows():
+    return "Sorry, This option is not available in your operating system"
 
 def level_1():
     """Menu Based : All IP Scanner"""
@@ -16,7 +19,7 @@ def level_1():
         elif input2 == '0':
             return 0
         elif input2 == '1':
-            print("Sorry, This option is not available in your operating system")
+            print(arp_scan_windows())
         elif input2 in ['2', '3']:
             ip_addr = input("Enter range of IPs (eg. 192.168.1.1-255)\n::: ") or "127.0.0.1"
             if validate_ip_range(ip_addr):

@@ -5,7 +5,7 @@ from utils.common_utils import documentation
 from utils.menu_utils import traceroute_all_os, validate_ip, validate_ip_range, run_nmap_scan_big, run_command
 
 
-def arp_scan(interactive=False):
+def arp_scan_linux(interactive=False):
     if not is_sudo_linux():
         return "Sudo not detected, \nTry another option or Switch to SUDO (Option 5 in previous menu)"
     else:
@@ -31,7 +31,7 @@ def level_1():
         elif input2 == '0':
             return 0
         elif input2 == '1':
-            arp_scan(interactive=True)
+            arp_scan_linux(interactive=True)
         elif input2 in ['2', '3']:
             ip_addr = input("Enter range of IPs (eg. 192.168.1.1-255)\n::: ") or "127.0.0.1"
             if validate_ip_range(ip_addr):

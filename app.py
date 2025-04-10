@@ -2,7 +2,8 @@ import platform
 
 from flask import Flask, render_template, jsonify
 
-from OS_scripts.linux import arp_scan
+from OS_scripts.linux import arp_scan_linux
+from OS_scripts.windows import arp_scan_windows
 from utils.administrative_utils import is_sudo_linux
 
 app = Flask(__name__)
@@ -22,7 +23,10 @@ def home():
 @app.route('/api/arp_scan')
 def api_arp_scan():
     try:
-        arp_scan_ = arp_scan()
+        if platform.system() == "Windows":
+            arp_scan_ = arp_scan_windows()
+        else:
+            arp_scan_ = arp_scan_linux()
         return jsonify({"success": True, "results": arp_scan_})
     except Exception as e:
         return jsonify({"success": False, "error": str(e)})
