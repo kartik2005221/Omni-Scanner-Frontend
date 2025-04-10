@@ -10,6 +10,10 @@ def arp_scan_nmap_windows(ip, interactive=False):
     return run_command(interactive, ["nmap", "-sn", "-T5", "--min-parallelism", "100",
                     "--host-timeout", "2000ms", ip])
 
+def flood_ping_windows(ip, interactive=False):
+    return "Sorry, Flood ping not possible in your operating system"
+
+
 def level_1():
     """Menu Based : All IP Scanner"""
     while True:
@@ -88,7 +92,7 @@ def level_2():
                 except KeyboardInterrupt:
                     return 0
         elif input2 == '4':
-            print("Sorry, Flood ping not possible in your operating system")
+            print(flood_ping_windows())
         else:
             print("Unsupported Option selected, Please Try again")
 

@@ -18,6 +18,10 @@ def arp_scan_nmap_linux(ip, interactive=False):
                                      "--host-timeout", "2000ms", ip])
 
 
+def flood_ping_linux(ip, interactive=False):
+    return run_command(interactive, ["sudo", "ping", "-f", ip])
+
+
 def level_1():
     """Menu Based : All IP Scanner"""
     while True:
@@ -68,9 +72,8 @@ def level_2():
                 ip_addr = input("Enter IP to ping\n::: ") or "127.0.0.1"
                 if validate_ip(ip_addr):
                     if input2 == '4':
-                        if is_sudo_linux() == 1:
-                            subprocess.run(["sudo", "ping", "-f", ip_addr])
-
+                        if is_sudo_linux():
+                            flood_ping_linux(ip_addr, interactive=True)
                         else:
                             print("Sudo not detected, Try another option or Switch to SUDO")
                         continue

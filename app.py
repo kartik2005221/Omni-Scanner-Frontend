@@ -1,9 +1,10 @@
 import platform
+import subprocess
 
 from flask import Flask, render_template, jsonify, request
 
-from OS_scripts.linux import arp_scan_linux, arp_scan_nmap_linux
-from OS_scripts.windows import arp_scan_windows, arp_scan_nmap_windows
+from OS_scripts.linux import arp_scan_linux, arp_scan_nmap_linux, flood_ping_linux
+from OS_scripts.windows import arp_scan_windows, arp_scan_nmap_windows, flood_ping_windows
 from utils.administrative_utils import is_sudo_linux
 from utils.menu_utils import run_nmap_scan_big_web
 
@@ -82,6 +83,71 @@ def arp_scan_nmap_big_page():
     """ARP Scan Nmap Big page route"""
     return render_template('arp_scan_nmap_big.html')
 
+# @app.route('/api/flood_ping')
+# def api_flood_ping():
+#     try:
+#         ip = request.args.get('ip')
+#         if not ip:
+#             return jsonify({"success": False, "error": "IP address is required."})
+#
+#         if platform.system() == "Windows":
+#             flood_ping = flood_ping_windows(ip)
+#         else:
+#             flood_ping = flood_ping_linux(ip)
+#
+#         return jsonify({"success": True, "results": flood_ping})
+#     except Exception as e:
+#         return jsonify({"success": False, "error": str(e)})
+
+
+processes = {}
+
+@app.route('/api/flood_ping/start')
+def start_flood_ping():
+    """Start flood ping process"""
+    if platform.system() == "Windows":
+        return jsonify({
+            "success": False,
+            "error": "Flood ping is not supported on your operating system. Learn more at <a href='/flood_ping_info'>this link</a>."
+        })
+
+    ip = request.args.get('ip')
+    if not ip:
+        return jsonify({"success": False, "error": "IP address is required."})
+
+    try:
+        # Start the flood ping process
+        process = subprocess.Popen(["ping", "-f", ip], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        process_id = process.pid
+        processes[process_id] = process
+        return jsonify({"success": True, "processId": process_id})
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)})
+
+@app.route('/api/flood_ping/stop')
+def stop_flood_ping():
+    process_id = request.args.get('processId')
+    if not process_id:
+        return jsonify({"success": False, "error": "Process ID is required."})
+
+    try:
+        process_id = int(process_id)
+        process = processes.pop(process_id, None)
+        if process:
+            process.terminate()
+            return jsonify({"success": True})
+        else:
+            return jsonify({"success": False, "error": "Process not found."})
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)})
+
+
+
+@app.route('/flood_ping')
+def flood_ping_page():
+    """Flood Ping page route"""
+    return render_template('flood_ping.html')
+
 
 @app.route('/switch_sudo')
 def switch_sudo():
@@ -129,4 +195,4 @@ def page_not_found(e):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8668)
+    app.run(debug=True, port=8668, host="0.0.0.0")
