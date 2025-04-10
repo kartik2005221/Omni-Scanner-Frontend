@@ -1,9 +1,10 @@
-import subprocess
 import ipaddress
-from utils.common_utils import oper_system
+import subprocess
+import sys
 import threading
 import time
-import sys
+
+from utils.common_utils import oper_system
 
 
 # def run_command(command):
@@ -113,6 +114,7 @@ def run_nmap_scan_big_web(ip):
     command = ["nmap", ip]
     result = subprocess.run(command, capture_output=True, text=True)
     return result.stdout
+
 
 # def get_ip():
 #     """Get the IP address of the current system"""

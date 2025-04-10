@@ -3,8 +3,8 @@ import subprocess
 
 from flask import Flask, render_template, jsonify, request
 
-from OS_scripts.linux import arp_scan_linux, arp_scan_nmap_linux, flood_ping_linux
-from OS_scripts.windows import arp_scan_windows, arp_scan_nmap_windows, flood_ping_windows
+from OS_scripts.linux import arp_scan_linux, arp_scan_nmap_linux
+from OS_scripts.windows import arp_scan_windows, arp_scan_nmap_windows
 from utils.administrative_utils import is_sudo_linux
 from utils.menu_utils import run_nmap_scan_big_web
 
@@ -83,6 +83,8 @@ def arp_scan_nmap_big_page():
     """ARP Scan Nmap Big page route"""
     return render_template('arp_scan_nmap_big.html')
 
+
+# this dont support any stop button, so we have to use improved string
 # @app.route('/api/flood_ping')
 # def api_flood_ping():
 #     try:
@@ -101,6 +103,7 @@ def arp_scan_nmap_big_page():
 
 
 processes = {}
+
 
 @app.route('/api/flood_ping/start')
 def start_flood_ping():
@@ -124,6 +127,7 @@ def start_flood_ping():
     except Exception as e:
         return jsonify({"success": False, "error": str(e)})
 
+
 @app.route('/api/flood_ping/stop')
 def stop_flood_ping():
     process_id = request.args.get('processId')
@@ -142,11 +146,13 @@ def stop_flood_ping():
         return jsonify({"success": False, "error": str(e)})
 
 
-
 @app.route('/flood_ping')
 def flood_ping_page():
     """Flood Ping page route"""
     return render_template('flood_ping.html')
+
+
+
 
 
 @app.route('/switch_sudo')

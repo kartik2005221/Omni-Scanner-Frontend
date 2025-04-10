@@ -60,7 +60,7 @@ def level_2():
     """Menu Based : Ping option's function"""
     while True:
         try:
-            print("\nSelect a Option:\n\t1. Simple finite ping\n\t2. Large Ping\n\t3. Ping for slow network"
+            print("\nSelect a Option:\n\t1. Simple ping\n\t2. Large Ping\n\t3. Ping for slow network"
                   "\n\t4. Flood Ping (requires sudo)\n\tH. Help\n\t0. Previous Menu")
             input2 = input("::: ").lower() or '0'
             if input2 == 'h':

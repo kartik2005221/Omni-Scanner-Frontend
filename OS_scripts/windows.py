@@ -1,14 +1,17 @@
+import subprocess
+
 from utils.common_utils import documentation
 from utils.menu_utils import traceroute_all_os, validate_ip, validate_ip_range, run_nmap_scan_big, run_command
-import subprocess
 
 
 def arp_scan_windows():
     return "Sorry, This option is not available in your operating system"
 
+
 def arp_scan_nmap_windows(ip, interactive=False):
     return run_command(interactive, ["nmap", "-sn", "-T5", "--min-parallelism", "100",
-                    "--host-timeout", "2000ms", ip])
+                                     "--host-timeout", "2000ms", ip])
+
 
 def flood_ping_windows(ip, interactive=False):
     return "Sorry, Flood ping not possible in your operating system"
@@ -51,7 +54,7 @@ def level_1():
 def level_2():
     """Menu Based : Ping option's function"""
     while True:
-        print("\nSelect a Option:\n\t1. Simple finite ping\n\t2. Large Ping\n\t3. Ping for slow network"
+        print("\nSelect a Option:\n\t1. Simple ping\n\t2. Large Ping\n\t3. Ping for slow network"
               "\n\t4. Flood Ping (requires sudo)(available only in linux/mac)\n\tH. Help\n\t0. Previous Menu")
         input2 = input("::: ").lower() or '0'
         if input2 == 'h':
@@ -74,11 +77,11 @@ def level_2():
                         subprocess.run(["ping", ping_count, ip_addr])
 
                     elif input2 == '2':
-                          subprocess.run(
+                        subprocess.run(
                             ["ping", ping_count, "-l", input("Enter size of packet to send (0-65500)"), ip_addr])
 
                     elif input2 == '3':
-                          subprocess.run(
+                        subprocess.run(
                             ["ping", ping_count, "-w", str(int(input("How much time (sec.) to wait?\n::: ")) * 1000),
                              ip_addr])
 
@@ -92,7 +95,7 @@ def level_2():
                 except KeyboardInterrupt:
                     return 0
         elif input2 == '4':
-            print(flood_ping_windows())
+            print(flood_ping_windows(2, interactive=True))
         else:
             print("Unsupported Option selected, Please Try again")
 
@@ -122,7 +125,7 @@ def level_4():
             ip_addr = input("Enter IP to scan(eg - 192.168.1.1)\n::: ") or "127.0.0.1"
             if validate_ip(ip_addr):
                 if '1' in input2:
-                      subprocess.run(["nmap", ip_addr])
+                    subprocess.run(["nmap", ip_addr])
 
                 else:
                     new_input2 = input2.split("")
@@ -191,9 +194,10 @@ Select a Option :
         elif input1 == '4':
             level_4()
         elif input1 == '5':
-              subprocess.run(["ipconfig"])
+            subprocess.run(["ipconfig"])
 
         else:
             print("Unsupported Option selected, Please Try again")
+
 
 print("Wrong file selected for running\nPlease run 'main.py' file by using 'python main.py' command")
