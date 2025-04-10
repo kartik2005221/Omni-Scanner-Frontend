@@ -26,3 +26,6 @@ after doing **, pull to the main branch
 
 --disable-arp-ping, -Pn, (-a) not with the script
 -o-all, -oX, -oG
+
+
+- nmap wale section me, 4th wale me, range and simple ip ka option user ko do,,,

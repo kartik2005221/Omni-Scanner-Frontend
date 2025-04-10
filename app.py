@@ -5,6 +5,7 @@ from flask import Flask, render_template, jsonify, request
 from OS_scripts.linux import arp_scan_linux, arp_scan_nmap_linux
 from OS_scripts.windows import arp_scan_windows, arp_scan_nmap_windows
 from utils.administrative_utils import is_sudo_linux
+from utils.menu_utils import run_nmap_scan_big_web
 
 app = Flask(__name__)
 
@@ -60,6 +61,26 @@ def api_arp_scan_nmap():
 def arp_scan_nmap_page():
     """ARP Scan Nmap page route"""
     return render_template('arp_scan_nmap.html')
+
+
+@app.route('/api/arp_scan_nmap_big')
+def api_arp_scan_nmap_big():
+    try:
+        ip = request.args.get('ip')
+        if not ip:
+            return jsonify({"success": False, "error": "IP address is required."})
+
+        arp_scan_nmap_big = run_nmap_scan_big_web(ip)
+
+        return jsonify({"success": True, "results": arp_scan_nmap_big})
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)})
+
+
+@app.route('/arp_scan_nmap_big')
+def arp_scan_nmap_big_page():
+    """ARP Scan Nmap Big page route"""
+    return render_template('arp_scan_nmap_big.html')
 
 
 @app.route('/switch_sudo')

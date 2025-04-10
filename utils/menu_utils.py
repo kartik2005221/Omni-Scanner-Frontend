@@ -109,6 +109,11 @@ def run_nmap_scan_big(ip_range):
         print("\n[Ctrl - C] Stopping...")
 
 
+def run_nmap_scan_big_web(ip):
+    command = ["nmap", ip]
+    result = subprocess.run(command, capture_output=True, text=True)
+    return result.stdout
+
 # def get_ip():
 #     """Get the IP address of the current system"""
 #     if oper_system() == "Windows":
