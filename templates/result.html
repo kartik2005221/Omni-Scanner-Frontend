@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Scan Result{% endblock %}
+
+{% block body %}
+<h1 class="sm:text-3xl text-4xl font-bold title-font mb-2 text-center mt-5 text-green-400 mb-8">Scan Results</h1>
+<div class="items-center">
+    <div class="flex items-center justify-center">
+        <aside class="bg-gray-950 text-white p-6 rounded-lg w-full max-w-lg font-mono">
+            <div class="flex items-center">
+                <p class="text-green-400">$&nbsp</p>
+                <p class="text-green-400"> command</p>
+                <button
+                    class="ml-auto text-sm px-4 py-2 border text-white rounded-xl cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-500 hover:shadow-lg hover:scale-105 active:scale-95">
+                    Copy
+                </button>
+            </div>
+        </aside>
+    </div>
+    <div class="mt-12">
+        <a href="{{ url_for('home') }}" class="text-green-400 hover:underline text-lg ">&larr; Back</a>
+    </div>
+</div>
+{% endblock %}
