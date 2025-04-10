@@ -16,6 +16,14 @@ def arp_scan_nmap_windows(ip, interactive=False):
 def flood_ping_windows(ip, interactive=False):
     return "Sorry, Flood ping not possible in your operating system"
 
+def simple_ping_windows(ip, ping_count_, interactive=False):
+    return run_command(interactive, ["ping", ping_count_, ip])
+
+def large_ping_windows(ip, ping_count_, size, interactive=False):
+    return run_command(interactive, ["ping", ping_count_, "-l", size, ip])
+
+def slow_ping_windows(ip, ping_count_, time,  interactive=False):
+    return run_command(interactive, ["ping", ping_count_, "-w", time, ip])
 
 def level_1():
     """Menu Based : All IP Scanner"""
@@ -74,16 +82,15 @@ def level_2():
                         ping_count = "-t"
 
                     if input2 == '1':
-                        subprocess.run(["ping", ping_count, ip_addr])
+                        simple_ping_windows(ip_addr, ping_count, interactive=True)
 
                     elif input2 == '2':
-                        subprocess.run(
-                            ["ping", ping_count, "-l", input("Enter size of packet to send (0-65500)"), ip_addr])
+                        size = input("Enter size of packet to send (0-65500)\n::: ") or '32'
+                        large_ping_windows(ip_addr, ping_count, size, interactive=True)
 
                     elif input2 == '3':
-                        subprocess.run(
-                            ["ping", ping_count, "-w", str(int(input("How much time (sec.) to wait?\n::: ")) * 1000),
-                             ip_addr])
+                        time = str((int(input("How much time (sec.) to wait?\n::: ")) or 5) * 1000)
+                        slow_ping_windows(ip_addr, ping_count, time, interactive=True)
 
                 else:
                     print("Invalid IP entered, Please Try again")

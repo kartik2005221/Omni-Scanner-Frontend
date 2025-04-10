@@ -1,5 +1,6 @@
 import platform
 import subprocess
+import threading
 
 from flask import Flask, render_template, jsonify, request
 
@@ -153,7 +154,17 @@ def flood_ping_page():
     return render_template('flood_ping.html')
 
 
+@app.route('/simple_ping')
+def simple_ping():
+    return render_template('simple_ping.html')
 
+@app.route('/large_ping')
+def large_ping():
+    return render_template('large_ping.html')
+
+@app.route('/slow_ping')
+def slow_ping():
+    return render_template('slow_ping.html')
 
 
 @app.route('/switch_sudo')
