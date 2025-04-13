@@ -3,6 +3,25 @@
 
 **Discover. Analyze. Secure.**
 
+___
+## Notice
+### ⚠️ Frontend Development Temporarily on Hold
+
+The frontend part of this project is currently on **pause** due to challenges in implementing the ping functionality which requires multi-input handling.
+
+The CLI version is still active and regularly updated here:  
+👉 [Omni-Scanner CLI GitHub Repo](https://github.com/kartik2005221/Omni-Scanner)
+
+If you're an experienced developer who understands Python-Flask frontend development, feel free to:
+- Fork this repo
+- Work on it
+- Create a Pull Request
+
+I'll return to complete this frontend once I’ve gained the right experience. Thank you for understanding!
+
+___
+
+
 Omni Scanner is a powerful, versatile, and open-source network scanning suite built with Python. This tool offers both an interactive CLI mode and a user-friendly web interface powered by Flask. Use it to perform quick network discovery, detailed port scans, traceroutes, and more.
 
 ---
